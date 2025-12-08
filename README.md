@@ -1,4 +1,4 @@
-# 📊 Flipkart E-Commerce Pricing & Value Analysis – End-to-End BI System  
+# Flipkart E-Commerce Pricing & Value Analysis – End-to-End BI System  
 ### 🔹 Author: Nagasudha S
 
 ---
