@@ -1,154 +1,145 @@
-Flipkart E-Commerce Pricing & Value Analysis – End-to-End BI System
-An analytical system to evaluate pricing, discounts, and customer value across smartphone brands.
-🔍 Project Overview
+# 📊 Flipkart E-Commerce Pricing & Value Analysis – End-to-End BI System  
+### 🔹 Author: Nagasudha S
+
+---
+
+## 📘 Project Overview
+This project analyzes smartphone pricing, discounts, and customer value using a Kaggle Flipkart mobile dataset. Although a simple web-scraping demo is included to showcase capability, the full analysis is performed on the Kaggle dataset for accuracy and completeness.
+
+Using Python, SQL, and Power BI, the project converts raw product listings into a pricing-intelligence system that answers important e-commerce business questions:
+
+- Which brands price their phones at premium or budget levels?  
+- Which models offer the best value (₹ per GB RAM / ₹ per GB Storage)?  
+- How do discounts vary across brands and price segments?  
+- Which products appear overpriced or underpriced based on rating vs. selling price?
+
+This end-to-end workflow reflects real-world data practices used by pricing analysts and category teams: data cleaning → feature engineering → SQL analysis → BI dashboards → business insights.
+
+---
+
+## 🛠️ Tech Stack
+- Python (Pandas, NumPy, Regex) – Cleaning & Feature Engineering  
+- SQL Server – Business Analysis Queries  
+- Power BI – Dashboarding & Insights  
+- GitHub – Version Control & Documentation  
+
+---
+
+## 📂 Project Structure
+flipkart-price-intelligence/  
+│  
+├── data/  
+│   ├── raw/  
+│   └── cleaned/  
+│  
+├── scripts/  
+│   ├── 01_data_cleaning_and_preparation.ipynb  
+│   └── scraper_demo.py  
+│  
+├── sql/  
+│   └── FLIPKART_E_COMMERCE.sql  
+│  
+├── powerbi/  
+│   ├── Flipkart Mobile Price Intelligence.pbix  
+│   └── screenshots/  
+│       ├── 01_overview.png  
+│       ├── 02_brand_insights.png  
+│       ├── 03_value_for_money.png  
+│       ├── 04_discounts_and_deals.png  
+│       └── 05_overpriced_vs_underpriced.png  
+│  
+└── docs/  
+    └── cheatsheet/
+
+---
+
+## 🧹 Data Cleaning & Feature Engineering (Python)
+Key steps performed:
+
+- Converted RAM & Storage values from MB/GB/TB into standardized GB format  
+- Cleaned missing values  
+- Extracted numeric values from inconsistent strings  
+- Engineered business features:
+
+**Engineered Columns:**  
+- discount_percentage  
+- price_gap  
+- Memory_GB  
+- Storage_GB  
+- price_per_GB_RAM  
+- price_per_GB_storage  
+- premium_flag  
+- budget_flag  
+
+---
+
+## 🗄️ SQL Business Analysis
+The cleaned dataset was imported into SQL Server for structured analytical queries.
+
+Key SQL insights include:
+
+- Average selling price by brand  
+- Discount patterns by brand  
+- Premium vs budget segmentation  
+- Overpriced vs underpriced classification  
+- Value-for-money metric comparisons  
+- Price–rating correlation analysis
+
+---
+
+## 📊 Power BI Dashboard (5 Pages)
+
+### 1️⃣ Executive Summary  
+![Overview](powerbi/screenshots/01_overview.png)
+
+### 2️⃣ Brand Insights  
+![Brand Insights](powerbi/screenshots/02_brand_insights.png)
+
+### 3️⃣ Value for Money  
+![Value for Money](powerbi/screenshots/03_value_for_money.png)
+
+### 4️⃣ Discounts & Deals  
+![Discounts](powerbi/screenshots/04_discounts_and_deals.png)
 
-This end-to-end BI project analyzes pricing patterns, discount strategies, and customer value across smartphones listed on Flipkart.
-It combines Python, SQL, and Power BI to deliver a complete price-intelligence system that helps businesses answer key commerce questions:
+### 5️⃣ Overpriced vs Underpriced  
+![Overpriced](powerbi/screenshots/05_overpriced_vs_underpriced.png)
 
-Which brands price their products at a premium?
+---
 
-Which models offer true value for money based on RAM/Storage cost efficiency?
+## 💡 Key Business Insights
+- Apple & Google Pixel dominate premium pricing with minimal discounting  
+- POCO & Motorola follow aggressive discount strategies  
+- Nokia & Samsung feature phones deliver the strongest value (₹ per GB)  
+- Mid-range smartphones offer balanced value-for-money  
+- Older premium models often appear overpriced  
+- Several mid-range models rank as highly underpriced relative to ratings  
 
-How do discounts vary across brands and price segments?
+---
 
-Which models appear overpriced or underpriced based on rating vs price?
+## 📥 Power BI File
+PBIX included in repo:  
+`powerbi/Flipkart Mobile Price Intelligence.pbix`
 
-📌 Author: Nagasudha S
-📌 Tools: Python, Pandas, SQL Server, Power BI
-📌 Dataset: Flipkart Mobiles (https://www.kaggle.com/code/devsubhash/flipkart-mobiles-eda/input)
+---
 
-🧱 Project Architecture
-📂 data/
-   ├── raw/                 → original scraped dataset
-   └── cleaned/             → final processed dataset
-  
-📂 scripts/
-   ├── data cleaning & feature engineering (Python)
-   └── web scraping demo
+## 🚀 How to Run the Project
 
-📂 sql/
-   └── analysis queries (pricing, discount, segmentation)
+### Python  
+Run the notebook:  
+`scripts/01_data_cleaning_and_preparation.ipynb`
 
-📂 powerbi/
-   ├── Flipkart Mobile Price Intelligence.pbix  
-   └── screenshots/ (all dashboard pages)
+### SQL  
+Run queries:  
+`sql/FLIPKART_E_COMMERCE.sql`
 
-📂 docs/
-   └── cheatsheet/ (optional reference materials)
+### Power BI  
+Open the PBIX file:  
+`powerbi/Flipkart Mobile Price Intelligence.pbix`
 
-README.md (this file)
+---
 
-🛠 Key Steps & Methodology
-1️⃣ Python – Data Cleaning & Feature Engineering
-
-Normalized RAM/Storage values (GB, MB, TB unified)
-
-Created discount %
-
-Computed value metrics:
-
-Price per GB RAM
-
-Price per GB Storage
-
-Labeled premium vs budget categories
-
-Exported cleaned dataset for SQL + Power BI
-
-📄 Notebook: scripts/01_data_cleaning_and_preparation.ipynb
-
-2️⃣ SQL – Business Analysis
-
-SQL Server queries were used to compute:
-
-Average price per brand
-
-Premium vs budget distribution
-
-Brand-wise discount intensity
-
-Overpriced / underpriced flags
-
-Value-for-money comparisons
-
-📄 File: sql/FLIPKART_E_COMMERCE.sql
-
-3️⃣ Power BI – Interactive Dashboard System
-
-A 5-page dashboard provides actionable business insights:
-
-📊 1. Executive Summary
-
-Avg Selling Price
-
-Premium Count
-
-Budget Count
-
-Avg Discount %
-
-Brand-level pricing & discount overview
-
-📊 2. Brand Insights
-
-Premium model count
-
-Brand-wise discount %
-
-Brand pricing positions
-
-Price vs Rating (Brand comparison)
-
-📊 3. Value-for-Money
-
-Best RAM value (lowest ₹/GB RAM)
-
-Best Storage value (lowest ₹/GB Storage)
-
-Value-for-money model comparison
-
-📊 4. Discounts & Deals
-
-Highest discount models
-
-Discount by price segment
-
-Heatmap of brand discount intensity
-
-📊 5. Overpriced vs Underpriced Analysis
-
-Based on rating vs price, RAM/storage cost efficiency, and discount patterns:
-
-Overpriced models (high price, low rating)
-
-Underpriced models (low price, high rating)
-
-Scatter plots of customer value positioning
-
-💡 Business Insights Summary
-
-- Apple & Google Pixel dominate premium pricing with consistently high ASPs.
-
-- POCO & Motorola lead discount-driven strategies with aggressive promotions.
-
-- Nokia & Samsung feature phones offer the strongest RAM/storage value.
-
-- Many mid-range phones deliver high value, balancing pricing with strong customer ratings.
-
-- Overpriced models tend to cluster in older premium segments.
-
-- Underpriced models generally belong to mid-range phones with high ratings.
-
-
-🚀 How to Run the Project
-Python
-open scripts/01_data_cleaning_and_preparation.ipynb  
-run all cells to generate cleaned dataset
-
-SQL
-open sql/FLIPKART_E_COMMERCE.sql in SQL Server  
-run queries in order
-
-Power BI
-Open PBIX → Refresh data → Interact with dashboards
+## 👤 About the Author
+**Nagasudha S**  
+Data Analyst – SQL | Python | Power BI  
+Focused on business storytelling and analytics-driven insights.
 
